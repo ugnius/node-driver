@@ -4,7 +4,7 @@ var Cluster = require('../node-driver').Cluster;
 var cluster = null;
 
 new Cluster.builder()
-	.addContactPoints(['192.168.1.177', '192.168.1.183'])
+	.addContactPoints(['192.168.1.177'])
 	.withPort(9042)
 	.build(function(error, _cluster) {
 		if (error) { throw error; }
@@ -15,12 +15,13 @@ new Cluster.builder()
 		metadata.getClusterName(function(error, clusterName) {
 			console.log(error, clusterName);
 
-			// create_keyspace_test(function(error) {
-			// 	test_table_simple_types(function(error) {
-			// 	});
-			// });
+			create_keyspace_test(function(error) {
+				test_table_simple_types(function(error) {
+				});
+			});
 
-			loopFunction(10, test_query);
+			loopFunction(5 * 1000, test_query);
+
 
 		});
 	});
