@@ -1,0 +1,10 @@
+{
+	"name": "node-driver",
+	"version": "0.1.1",
+	"description": "Cassandra CQL binary protocol driver for node.js",
+	"main": "./index.js",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/ugnius/node-driver.git"
+	}
+}
