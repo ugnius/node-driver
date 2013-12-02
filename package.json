@@ -6,5 +6,11 @@
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/ugnius/node-driver.git"
+	},
+	"dependencies": {
+		"mocha": "~1.15.0"
+	},
+	"scripts": {
+		"test": "mocha tests --ui tdd --reporter spec"
 	}
 }
