@@ -7,7 +7,10 @@ new Cluster.builder()
 	.addContactPoints(['192.168.1.177'])
 	.withPort(9042)
 	.build(function(error, _cluster) {
-		if (error) { throw error; }
+		if (error) {
+			console.log(error.message);
+			process.exit(1);
+		}
 
 		cluster = _cluster;
 		var metadata = cluster.getMetadata();
@@ -21,7 +24,6 @@ new Cluster.builder()
 			});
 
 			loopFunction(5 * 1000, test_query);
-
 
 		});
 	});
