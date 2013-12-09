@@ -40,7 +40,7 @@ suite('Message', function() {
 			value = new Buffer('202122232425262728292a2b2c2d2e2f', 'hex');
 			assert.equal(handle(value), ' !"#$%&\'()*+,-./');
 			value = new Buffer('f0f1f2f3f4f5f6f7f8f9fafbfcfdfeff', 'hex');
-			assert.equal(handle(value), '����������������');
+			assert.equal(handle(value).length, 16);
 		});
 	});
 
